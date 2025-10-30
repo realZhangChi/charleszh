@@ -10,6 +10,5 @@ resources:
   src: "featured-image.jpg"
 ---
 
-A lookup table is a master list that maps business keys to values and is referenced by other tables. The ABP Framework follows Domain-Driven Design (DDD) best practices, which do not align well with traditional lookup-table patterns. This article explains how to implement lookup tables for an ABP application by separating lookup-table responsibility from the DDD domain and placing it in the infrastructure layer.
+A lookup table is a master list that defines groups of property values. These values are consumed by other entities and can be edited dynamically or extended with new values at runtime. Many systems use lookup tables to manage properties such as `JobTitle` and `Department` for the `Employee` entity. This approach simplifies development and data storage but does not align well with Domain-Driven Design (DDD) principles. This article shows how to implement lookup tables in an ABP application using a shared-type entity, by separating the lookup-table responsibility from the DDD domain and placing it in the infrastructure layer.
 
-This guide is intended for developers using the ABP Framework who need to represent stable reference data (for example, status codes or country lists) while preserving DDD principles. It covers design choices, implementation patterns, and trade-offs.
