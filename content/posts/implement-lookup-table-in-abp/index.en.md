@@ -10,7 +10,7 @@ resources:
   src: "featured-image.jpg"
 ---
 
-A lookup table is a master list that defines groups of configurable values. These values are consumed by other entities and can be edited dynamically or extended with new values at runtime. Many systems use lookup tables to manage properties such as `JobTitle` and `Department` for the `Employee` entity. This approach simplifies development and data storage but does not align well with Domain-Driven Design (DDD) principles. This article shows how to implement lookup tables in an ABP application using a shared-type entity, by separating the lookup-table responsibility from the DDD domain and placing it in the infrastructure layer.
+A lookup table is a master list that defines groups of configurable values. These values are consumed by other entities and can be edited dynamically or extended with new values at runtime. Many systems use lookup tables to manage properties such as `JobTitle` and `Department` for the `Employee` entity. This approach simplifies development and data storage but does not align well with **Domain-Driven Design (DDD)** principles. This article shows how to implement lookup tables in an ABP application using a shared-type entity, by separating the lookup-table responsibility from the DDD domain and placing it in the infrastructure layer.
 
 ## The Problem with Traditional Lookup Tables
 
@@ -35,3 +35,8 @@ public class Lookup
     public string Name { get; set; }
 }
 ```
+
+While this design is convenient and flexible, it introduces several problems from a DDD perspective.
+
+1. **Weak Domain semantics**: From the domain's point of view, concepts like `JobTitle`, `Department` are distinct entities. However, by store every things in a single generic `Lookup` table, we lose these distinctions.
+2. 
