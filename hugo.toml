@@ -1,5 +1,5 @@
 baseURL = 'https://chaleszh.dev/'
-defaultContentLanguage = "en-us"
+defaultContentLanguage = "en"
 languageCode = 'en-us'
 title = 'charleszh.dev'
 theme = 'LoveIt'
